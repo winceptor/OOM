@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Rental">
+  <ClassDiagramComponents>
+    <Class name="Rental" package="" visibility="public" xPosition="525.0" yPosition="55.0">
+      <Fields>
+        <Field name="rCustomer" type="Customer" visibility="private"/>
+        <Field name="rCar" type="Car" visibility="private"/>
+        <Field name="rStartDate" type="Date" visibility="private"/>
+        <Field name="rEndDate" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Customer" name="customer"/>
+          <Argument type="Car" name="car"/>
+          <Argument type="Date" name="dateStart"/>
+          <Argument type="Date" name="dateEnd"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Customer" package="" visibility="public" xPosition="56.0" yPosition="506.0">
+      <Fields>
+        <Field name="cID" type="String" visibility="private"/>
+        <Field name="cName" type="String" visibility="private"/>
+        <Field name="cPhoneNumber" type="String" visibility="private"/>
+        <Field name="cAddress" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="phoneNumber"/>
+          <Argument type="String" name="address"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Car" package="" visibility="public" xPosition="565.0" yPosition="506.0">
+      <Fields>
+        <Field name="cID" type="String" visibility="private"/>
+        <Field name="cMake" type="String" visibility="private"/>
+        <Field name="cModel" type="String" visibility="private"/>
+        <Field name="cYear" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="make"/>
+          <Argument type="String" name="model"/>
+          <Argument type="String" name="year"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Date" package="" visibility="public" xPosition="1002.0" yPosition="506.0">
+      <Fields>
+        <Field name="dDate" type="String" visibility="private"/>
+        <Field name="dTime" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="date"/>
+          <Argument type="String" name="time"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Mainclass" package="" visibility="public" xPosition="1129.0" yPosition="102.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="rCar" source="Rental" target="Car" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Mainclass" target="Rental" sourceCardinality="1..1" targetCardinality="1..*"/>
+    <HasRelation name="rStartDate" source="Rental" target="Date" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="rEndDate" source="Rental" target="Date" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="rCustomer" source="Rental" target="Customer" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
